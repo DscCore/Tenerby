@@ -1,0 +1,16 @@
+REPLACE INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction_A`, `faction_H`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `rank`, `mindmg`, `maxdmg`, `dmgschool`, `attackpower`, `dmg_multiplier`, `baseattacktime`, `rangeattacktime`, `unit_class`, `unit_flags`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `minrangedmg`, `maxrangedmg`, `rangedattackpower`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `resistance1`, `resistance2`, `resistance3`, `resistance4`, `resistance5`, `resistance6`, `spell1`, `spell2`, `spell3`, `spell4`, `spell5`, `spell6`, `spell7`, `spell8`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `Health_mod`, `Mana_mod`, `Armor_mod`, `RacialLeader`, `questItem1`, `questItem2`, `questItem3`, `questItem4`, `questItem5`, `questItem6`, `movementId`, `RegenHealth`, `equipment_id`, `mechanic_immune_mask`, `flags_extra`, `ScriptName`, `WDBVerified`) VALUES (42650, 0, 0, 0, 0, 0, 30477, 0, 0, 0, 'Anchorite Lyteera', 'Premium Master', '', 0, 83, 83, 0, 35, 35, 1, 1, 1, 1, 2, 600, 900, 0, 1000, 100, 1500, 1500, 2, 2, 0, 0, 0, 0, 0, 0, 480, 750, 1000, 7, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'SmartAI', 0, 3, 100, 50, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2039, 0, 2, 'npc_premium_master', 12340);
+
+DELETE FROM `creature_template_addon` WHERE (`entry`=42650);
+INSERT INTO `creature_template_addon` (`entry`, `path_id`, `mount`, `bytes1`, `bytes2`, `emote`, `auras`) VALUES (42650, 0, 0, 0, 0, 50, '');
+
+DELETE FROM `smart_scripts` WHERE (`entryorguid`=42650 AND `source_type`=0);
+INSERT INTO `smart_scripts` (`entryorguid`, `source_type`, `id`, `link`, `event_type`, `event_phase_mask`, `event_chance`, `event_flags`, `event_param1`, `event_param2`, `event_param3`, `event_param4`, `action_type`, `action_param1`, `action_param2`, `action_param3`, `action_param4`, `action_param5`, `action_param6`, `target_type`, `target_param1`, `target_param2`, `target_param3`, `target_x`, `target_y`, `target_z`, `target_o`, `comment`) VALUES 
+(42650, 0, 0, 0, 1, 0, 100, 0, 500, 500, 600000, 600000, 11, 69787, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Anchorite Lyteera Cast Ice Barrirer'),
+(42650, 0, 1, 0, 1, 0, 100, 0, 1000, 1000, 600000, 600000, 11, 43024, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 'Anchorite Lyteera Cast Mage Armor');
+
+DELETE FROM `creature` WHERE `id`=42650;
+INSERT INTO `creature` (`guid`,`id`,`map`,`spawnMask`,`phaseMask`,`modelid`,`equipment_id`,`position_x`,`position_y`,`position_z`,`orientation`,`spawntimesecs`,`spawndist`,`currentwaypoint`,`curhealth`,`curmana`,`MovementType`,`npcflag`,`unit_flags`,`dynamicflags`) VALUES
+(252440, 42650, 1, 1, 1, 0, 2039, 1306.67, -4373.75, 28.0678, 5.02318, 300, 0, 0, 464600, 212900, 0, 0, 0, 0),
+(252443, 42650, 0, 1, 1, 0, 2039, -9130.89, 325.579, 93.5047, 0.934619, 300, 0, 0, 464600, 212900, 0, 0, 0, 0),
+(252442, 42650, 0, 1, 1, 0, 2039, -8846.99, 629.756, 94.9316, 0.626939, 300, 0, 0, 464600, 212900, 0, 0, 0, 0),
+(252441, 42650, 1, 1, 1, 0, 2039, 1587.54, -4423.01, 8.55472, 3.57804, 300, 0, 0, 464600, 212900, 0, 0, 0, 0);

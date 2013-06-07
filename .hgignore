@@ -1,0 +1,4 @@
+build*/
+glob:*rej
+glob:*orig
+glob:*patch
